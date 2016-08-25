@@ -1,0 +1,12 @@
+ifneq ("$(wildcard 25th-floor.mk)","")
+	include 25th-floor.mk
+endif
+
+# make
+SUBDIRS = $(wildcard */.)
+
+# Define variables, export them and include them usage-documentation
+$(eval $(call defw,I_AM_A_VARIABLE,I_AM_THE_VALUE))
+
+.PHONY: all
+all: ##@Overlordship Just Do It!

@@ -27,7 +27,7 @@ HELP_FUN = \
 # Variable wrapper
 define defw
 	custom_vars += $(1)
-	$(1) := $(2)
+	$(1) ?= $(2)
 	export $(1)
 	shell_env += $(1)="$(2)"
 endef

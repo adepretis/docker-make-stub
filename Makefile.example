@@ -9,4 +9,10 @@ SUBDIRS = $(wildcard */.)
 $(eval $(call defw,I_AM_A_VARIABLE,I_AM_THE_VALUE))
 
 .PHONY: all
-all: ##@Overlordship Just Do It!
+all: ##@Examples Run all examples
+all: example-se
+
+.PHONY: example-se
+example-se: ##@Examples How to use $(shell_env)
+	@echo '$$(shell_env) my_command'
+	$(shell_env) echo "echoing I_AM_A_VARIABLE=$${I_AM_A_VARIABLE}"

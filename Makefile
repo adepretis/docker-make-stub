@@ -1,13 +1,4 @@
-ifneq ("$(wildcard 25th-floor.mk)","")
-	include 25th-floor.mk
-endif
-
-ifneq ("$(wildcard interface-example.mk)","")
-	include interface-example.mk
-endif
-
-# make
-SUBDIRS = $(wildcard */.)
+include *.mk
 
 # Define variables, export them and include them usage-documentation
 $(eval $(call defw,I_AM_A_VARIABLE,I_AM_THE_VALUE))

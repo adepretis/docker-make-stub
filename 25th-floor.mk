@@ -13,13 +13,19 @@ RMUL      := $(shell tput smul)
 # A category can be added with @category
 HELP_FUN = \
 	%help; \
-	while(<>) { push @{$$help{$$2 // 'options'}}, [$$1, $$3] if /^([a-zA-Z\-]+)\s*:.*\#\#(?:@([a-zA-Z\-]+))?\s(.*)$$/ }; \
+	while(<>) { \
+		if (/^([a-zA-Z\-]+)\s*:.*\#\#(?:@([a-zA-Z\-]+))?\s(.*)$$/) { \
+			$$c = $$2; $$t = $$1; $$d = $$3; \
+			push @{$$help{$$c}}, [$$t, $$d] unless grep { grep /^$$t$$/, $$_->[0] } @{$$help{$$c}}; \
+		} \
+	}; \
 	for (sort keys %help) { \
-	printf("${WHITE}%24s:${RESET}\n\n", $$_); \
-	for (@{$$help{$$_}}) { \
-	printf("${YELLOW}%25s${RESET}${GREEN}  %s${RESET}\n", $$_->[0], $$_->[1]); \
-	} \
-	print "\n"; } 
+		printf("${WHITE}%24s:${RESET}\n\n", $$_); \
+		for (@{$$help{$$_}}) { \
+			printf("${YELLOW}%25s${RESET}${GREEN}  %s${RESET}\n", $$_->[0], $$_->[1]); \
+		} \
+		print "\n"; \
+	} 
 
 # make
 .DEFAULT_GOAL := help

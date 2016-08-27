@@ -16,7 +16,7 @@ HELP_FUN = \
 	while(<>) { \
 		if (/^([a-zA-Z\-]+)\s*:.*\#\#(?:@([a-zA-Z\-]+))?\s(.*)$$/) { \
 			$$c = $$2; $$t = $$1; $$d = $$3; \
-			push @{$$help{$$c}}, [$$t, $$d] unless grep { grep /^$$t$$/, $$_->[0] } @{$$help{$$c}}; \
+			push @{$$help{$$c}}, [$$t, $$d] unless grep { grep { grep /^$$t$$/, $$_->[0] } @{$$help{$$_}} } keys %help; \
 		} \
 	}; \
 	for (sort keys %help) { \

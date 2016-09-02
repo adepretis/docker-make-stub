@@ -227,4 +227,3 @@ Clone this repository and just call ``make help`` and/or ``make all``.
 
   * allow categorization for variables too, maybe even bundle categorized variables with their correspondig, categorized targets for ``make help``
   * add example implementations for docker, docker-compose and rancher-compose
-```

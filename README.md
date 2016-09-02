@@ -218,10 +218,10 @@ Clone this repository and just call ``make help`` and/or ``make all``.
 
 ## Credits
 
-  * @prwhite for the initial idea of self-documenting targets (https://gist.github.com/prwhite/8168133)
-  * @lordnynex for https://gist.github.com/prwhite/8168133#gistcomment-1712123
-  * @HarasimowiczKamil for https://gist.github.com/prwhite/8168133#gistcomment-1727513
-  * @boutin and @dready for feedback and challeging the idea/concept
+  * [prwhite](https://github.com/prwhite) for the initial idea of self-documenting targets (https://gist.github.com/prwhite/8168133)
+  * [lordnynex](https://github.com/lordnynex) for https://gist.github.com/prwhite/8168133#gistcomment-1712123
+  * [HarasimowiczKamil](https://github.com/HarasimowiczKamil) for https://gist.github.com/prwhite/8168133#gistcomment-1727513
+  * [boutin](https://github.com/bountin) and [dready](https://github.com/dready) for feedback and challeging the idea/concept
 
 ## Todo
 

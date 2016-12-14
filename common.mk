@@ -16,7 +16,7 @@ HELP_FUN = \
 	%help; \
 	use Data::Dumper; \
 	while(<>) { \
-		if (/^([a-zA-Z\-]+)\s*:.*\#\#(?:@([a-zA-Z\-]+))?\s(.*)$$/) { \
+		if (/^([a-zA-Z\-]+)\s*:.*\#\#(?:@([a-zA-Z\-_\s]+))?\t(.*)$$/) { \
 			$$c = $$2; $$t = $$1; $$d = $$3; \
 			push @{$$help{$$c}}, [$$t, $$d, $$ARGV] unless grep { grep { grep /^$$t$$/, $$_->[0] } @{$$help{$$_}} } keys %help; \
 		} \

@@ -24,3 +24,7 @@ example-interface:: ##@Examples Abuse double-colon rules
 	@echo ""
 	@echo "define 'target:: ##@Category not implemement' in .mk"
 	@echo "implement 'target:: ##@Category this is nice' in Makefile"
+
+.PHONY: category-name-test
+category-name-test: ##@Category with space	description separated by tab
+	@echo ""

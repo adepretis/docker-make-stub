@@ -33,6 +33,11 @@ target:: ##@MyCategory This is a description of what this target does.
 	@echo "Yay!"
 ```
 
+Valid target descriptions are:
+
+  * \##@MyCategory\<space>Description
+  * \##@My\<space>category\<space>rocks\<tab>Description
+
 **Important**: You have to implement targets as [Double-Colon Rule](https://www.gnu.org/software/make/manual/html_node/Double_002dColon.html) because the ``.mk`` files define it this way.
 
 If the stub defines a target pre-categorized in e.g. ``Docker``, you can also override this in your own documentation:

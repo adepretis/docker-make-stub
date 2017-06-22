@@ -46,6 +46,12 @@ define defw
 	shell_env += $(1)="$$($(1))"
 endef
 
+# Variable wrapper for hidden variables
+define defw_h
+	$(1) := $(2)
+	shell_env += $(1)="$$($(1))"
+endef
+
 .PHONY: help
 help:: ##@Other Show this help.
 	@echo ""

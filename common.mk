@@ -58,7 +58,7 @@ help:: ##@Other Show this help.
 	@printf "%30s " "${BLUE}VARIABLES"
 	@echo "${RESET}"
 	@echo ""
-	@printf "${BLUE}%25s${RESET}${TURQUOISE}  ${SMUL}%s${RESET}\n" $(foreach v, $(custom_vars), $v $($(v)))
+	@printf "${BLUE}%25s${RESET}${TURQUOISE}  ${SMUL}%s${RESET}\n" $(foreach v, $(custom_vars), $v $(if $($(v)),$($(v)), ''))
 	@echo ""
 	@echo ""
 	@echo ""

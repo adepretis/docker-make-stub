@@ -5,7 +5,7 @@ $(eval $(call defw,I_AM_A_VARIABLE,I_AM_THE_VALUE))
 
 .PHONY: all
 all: ##@Examples Run all examples
-all: example-se example-interface
+all: example-se example-interface style-test
 
 .PHONY: example-se
 example-se: ##@Examples How to use $(shell_env)
@@ -28,3 +28,9 @@ example-interface:: ##@Examples Abuse double-colon rules
 .PHONY: category-name-test
 category-name-test: ##@Category with space	description separated by tab
 	@echo ""
+
+.PHONY: style-test
+style-test: ##@Examples Showing some style
+	$(info $(call style_info,I like structure and colors))
+	$(info $(call style_warning,I like structure and colors))
+	$(info $(call style_error,I like structure and colors))

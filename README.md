@@ -215,6 +215,42 @@ deploy:: build ship finish
     $(shell_env) rancher-compose -p $(RANCHER_STACK_NAME) up -d --upgrade
 ```
 
+## Functions
+
+You can redefine functions (update-safe) by adding e.g. ``.stub/z-common.mk`` with:
+
+```
+define style_info
+---------------- I like dashes more ----------------
+$(1)
+----------------------------------------------------
+endef
+```
+
+### style_info
+
+```Makefile
+target:: ##@Category Description
+	$(info $(call style_info,Doing something here))
+	...
+```
+
+### style_warning
+
+```Makefile
+target:: ##@Category Description
+	$(info $(call style_warning,Doing something here))
+	...
+```
+
+### style_error
+
+```Makefile
+target:: ##@Category Description
+	$(info $(call style_error,Doing something here))
+	...
+```
+
 ## Example output
 
 Clone this repository and just call ``make help`` and/or ``make all``.

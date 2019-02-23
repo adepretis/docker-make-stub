@@ -5,6 +5,7 @@ WHITE     := $(shell tput -Txterm setaf 7)
 YELLOW    := $(shell tput -Txterm setaf 3)
 GREY      := $(shell tput -Txterm setaf 1)
 RESET     := $(shell tput -Txterm sgr0)
+RED       := $(shell tput -Txterm setaf 1)
 
 SMUL      := $(shell tput smul)
 RMUL      := $(shell tput rmul)
@@ -50,6 +51,31 @@ endef
 define defw_h
 	$(1) := $(2)
 	shell_env += $(1)="$$($(1))"
+endef
+
+# Colorized output for control functions (info, warning, error)
+define style_info
+$(TURQUOISE)
+================================================================================
+$(1)
+================================================================================
+$(RESET)
+endef
+
+define style_warning
+$(YELLOW)
+================================================================================
+$(1)
+================================================================================
+$(RESET)
+endef
+
+define style_error
+$(RED)
+================================================================================
+$(1)
+================================================================================
+$(RESET)
 endef
 
 .PHONY: help

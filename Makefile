@@ -31,6 +31,6 @@ category-name-test: ##@Category with space	description separated by tab
 
 .PHONY: style-test
 style-test: ##@Examples Showing some style
-	$(info $(call style_info,I like structure and colors))
-	$(info $(call style_warning,I like structure and colors))
-	$(info $(call style_error,I like structure and colors))
+	$(call verbose_info,I like structure and colors)
+	$(call verbose_warning,I like structure and colors)
+	$(call verbose_error,I like structure and colors)

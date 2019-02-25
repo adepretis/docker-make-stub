@@ -220,34 +220,37 @@ deploy:: build ship finish
 You can redefine functions (update-safe) by adding e.g. ``.stub/z-common.mk`` with:
 
 ```
-define style_info
----------------- I like dashes more ----------------
-$(1)
-----------------------------------------------------
+define verbose_info
+	@echo ${TURQUOISE}
+	@echo ------------------------------ I like dashes more ------------------------------
+	@echo ${1}
+	@echo ------------------------------
+	@echo
+	@tput -Txterm sgr0 # ${RESET} won't work here for some reason
 endef
 ```
 
-### style_info
+### verbose_info
 
 ```Makefile
 target:: ##@Category Description
-	$(info $(call style_info,Doing something here))
+	$(call verbose_info,Doing something here)
 	...
 ```
 
-### style_warning
+### verbose_warning
 
 ```Makefile
 target:: ##@Category Description
-	$(info $(call style_warning,Doing something here))
+	$(call verbose_warning,Doing something here)
 	...
 ```
 
-### style_error
+### verbose_error
 
 ```Makefile
 target:: ##@Category Description
-	$(info $(call style_error,Doing something here))
+	$(call verbose_error,Doing something here)
 	...
 ```
 
@@ -262,7 +265,7 @@ Clone this repository and just call ``make help`` and/or ``make all``.
   * [prwhite](https://github.com/prwhite) for the initial idea of self-documenting targets (https://gist.github.com/prwhite/8168133)
   * [lordnynex](https://github.com/lordnynex) for https://gist.github.com/prwhite/8168133#gistcomment-1712123
   * [HarasimowiczKamil](https://github.com/HarasimowiczKamil) for https://gist.github.com/prwhite/8168133#gistcomment-1727513
-  * [boutin](https://github.com/bountin) and [dready](https://github.com/dready) for feedback and challeging the idea/concept
+  * [boutin](https://github.com/bountin) and [dready](https://github.com/dready) for feedback and challenging the idea/concept
 
 ## Todo
 

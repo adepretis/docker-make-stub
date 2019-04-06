@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  awesome-app:
+    image: ${NS}/${REPO}:${VERSION}
+    labels:
+      io.rancher.container.pull_image: always
+      traefik.enable: 'true'
+      traefik.port: 80
+      traefik.frontend.rule: ${TRAEFIK_FRONTEND_RULE}
+      traefik.frontend.entryPoints: http,https
+      traefik.frontend.redirect.entryPoint: https

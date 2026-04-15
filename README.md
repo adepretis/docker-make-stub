@@ -1,5 +1,8 @@
 # Docker Make Stub
 
+> [!NOTE]
+> This "stub" served me well over the years. I actually used it in a different way than I originally intended but never invested the time to update this documentation. Recently I moved on to [just](https://github.com/casey/just), which kind of instantly replaced `make` for my purposes, thus sending this blueprint off to the archives ;-)
+
 The idea behind this project is to provide a generalized, (more or less) opinioated and convenient make/Makefile stub, focused on "All things Docker". It can be utilized by developers and maschines alike (e.g. TeamCity, Jenkins, GoCD, ...)
 
 Except for the auto-generated ``help``, the stub does not implement any ``make``. Its purpose is to provide a common target-naming for different purposes, the means to easily define variables and a color-coded (``xterm-256``), auto-generated usage/help.
